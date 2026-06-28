@@ -1,21 +1,21 @@
-🎙️ Enhancing Automatic Pronunciation Assessment: From Speaker Embeddings to GOP-based Multi-Level Analysis
+🎙️ **Enhancing Automatic Pronunciation Assessment: From Speaker Embeddings to GOP-based Multi-Level Analysis**
 
 A research-driven study on pronunciation assessment, speaker representation learning, and Goodness of Pronunciation (GOP), with experiments conducted on the SpeechOcean762 corpus.
 
-Overview
+**Overview**
 
-Automatic Pronunciation Assessment (APA) is an important component of Computer Assisted Language Learning (CALL) systems. Traditional systems rely heavily on acoustic models and Goodness of Pronunciation (GOP) scores, while recent research has shifted towards self-supervised speech representations.
+**Automatic Pronunciation Assessment (APA)** is an important component of **Computer Assisted Language Learning (CALL)** systems. Traditional systems rely heavily on acoustic models and **Goodness of Pronunciation (GOP)** scores, while recent research has shifted towards self-supervised speech representations.
 
 This repository documents my complete research journey—from studying classical speaker embedding techniques to understanding modern self-supervised learning methods and finally implementing a GOP-based pronunciation assessment framework on the SpeechOcean762 dataset.
 
 Rather than being a single implementation, this project represents an exploration of how pronunciation assessment has evolved over the last two decades and where future research opportunities exist.
 
-Research Journey
-Phase I — Understanding Speaker Representation Learning
+**Research Journey
+Phase I — Understanding Speaker Representation Learning**
 
 Before beginning pronunciation assessment, I first studied how speech representations have evolved over the years.
 
-Joint Factor Analysis (JFA)
+**Joint Factor Analysis (JFA)**
 
 Studied:
 
@@ -27,7 +27,7 @@ Understanding gained:
 
 Why early speaker verification systems required separate variability modeling.
 Limitations in handling large-scale speaker datasets.
-i-Vectors
+**i-Vectors**
 
 Studied:
 
@@ -46,7 +46,7 @@ Limitations
 Linear representation
 Requires extensive feature engineering
 Sensitive to channel variability
-x-Vectors
+**x-Vectors**
 
 Studied
 
@@ -58,7 +58,7 @@ Key Learning
 
 Deep neural networks significantly outperform i-vectors.
 Learned embeddings directly from speech instead of handcrafted statistics.
-ECAPA-TDNN
+**ECAPA-TDNN**
 
 Extensively studied
 
@@ -74,7 +74,7 @@ Better channel attention
 Multi-scale feature extraction
 More discriminative speaker embeddings
 State-of-the-art speaker verification performance
-r-Vectors
+**r-Vectors**
 
 Studied the motivation behind residual-based speaker embeddings.
 
@@ -83,13 +83,13 @@ Understanding
 Robust feature learning
 Improved speaker discrimination
 Better handling of difficult acoustic conditions
-Phase II — Literature Survey on Pronunciation Assessment
+**Phase II — Literature Survey on Pronunciation Assessment**
 
 The primary research paper studied was
 
-GOP2Vec: Global and Local Context-Aware Goodness of Pronunciation Embedding for Pronunciation Assessment
+**GOP2Vec: Global and Local Context-Aware Goodness of Pronunciation Embedding for Pronunciation Assessment**
 
-Main ideas studied
+**Main ideas studied**
 
 Traditional GOP
 GOP feature limitations
@@ -111,7 +111,7 @@ speaking fluency
 
 GOP2Vec addresses this by learning contextual pronunciation embeddings instead of relying solely on raw GOP scores.
 
-Limitations of GoP2Vec
+**Limitations of GoP2Vec**
 
 While GoP2Vec significantly improves traditional GOP-based pronunciation assessment by incorporating contextual pronunciation embeddings, the literature review revealed several important limitations that motivated the next phase of this research.
 
@@ -166,7 +166,7 @@ i-vector speaker embeddings
 
 Although effective, these handcrafted representations capture only limited acoustic information and cannot fully exploit the rich contextual information contained in raw speech signals.
 
-Motivation for Self-Supervised Learning
+**Motivation for Self-Supervised Learning**
 
 These limitations naturally motivate the exploration of Self-Supervised Learning (SSL) models for pronunciation assessment.
 
@@ -187,7 +187,7 @@ Capture long-range phonetic and contextual information.
 Generalize better across speakers, accents, and recording conditions.
 Require significantly less manually annotated pronunciation data.
 
-Possible future direction
+**Possible future direction**
 
 Instead of computing pronunciation quality using only GOP,
 
@@ -213,7 +213,7 @@ self-supervised speech embeddings
 
 can improve automatic pronunciation assessment.
 
-Potential pipeline
+**Potential pipeline**
 
 Audio
 
@@ -235,9 +235,9 @@ Regression / Transformer
 
 Pronunciation Score Prediction
 
-Phase IV — Experimental Analysis on SpeechOcean762
+**Phase IV — Experimental Analysis on SpeechOcean762**
 
-Dataset
+**Dataset**
 
 SpeechOcean762
 
@@ -248,7 +248,7 @@ phoneme annotations
 expert pronunciation scores
 word scores
 sentence scores
-Methodology
+**Methodology**
 Step 1
 
 Extracted learner pronunciation files.
@@ -337,7 +337,7 @@ Extracted expert annotations from
 
 scores.json
 
-Compared machine-derived GOP scores against human scores at
+**Compared machine-derived GOP scores against human scores at**
 
 Phoneme Level
 Word Level
@@ -345,9 +345,9 @@ Sentence Level
 
 using
 
-Pearson Correlation
+**Pearson Correlation
 Spearman Correlation
-Experimental Results
+Experimental Results**
 
 Observed trend
 
@@ -358,7 +358,7 @@ Phoneme	Lowest
 
 This indicates that aggregated GOP representations align better with human perception than isolated phoneme scores.
 
-Vowel vs Consonant Analysis
+**Vowel vs Consonant Analysis**
 
 Separated all phonemes into
 
@@ -373,7 +373,7 @@ pronunciation clusters
 
 This provides insight into whether pronunciation assessment behaves differently across major phonetic categories.
 
-Current Status
+**Current Status**
 
 ✔ Literature review completed
 
@@ -395,7 +395,7 @@ Current Status
 
 ✔ Vowel vs consonant analysis
 
-Future Work
+**Future Work**
 Integrate HuBERT embeddings with GOP features.
 Explore transformer-based pronunciation scoring models.
 Compare SSL embeddings (HuBERT, wav2vec 2.0, WavLM) for pronunciation assessment.
