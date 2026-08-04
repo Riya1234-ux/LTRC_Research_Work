@@ -497,12 +497,12 @@ Constructed pronunciation models directly from GOP distributions.
 
 **Pipeline**:
 
-# Collected GOP scores from all learner utterances
-# Grouped GOP values by phoneme across the entire corpus
-# Trained a 3-component Gaussian Mixture Model (GMM) for each phoneme
-# Identified the Gaussian component with the highest mean as the "good pronunciation" cluster
-# Computed log-likelihoods of phoneme GOP scores under the good-pronunciation Gaussian
-# Aggregated likelihoods to obtain word-level and sentence-level pronunciation representations
+Collected GOP scores from all learner utterances
+Grouped GOP values by phoneme across the entire corpus
+Trained a 3-component Gaussian Mixture Model (GMM) for each phoneme
+Identified the Gaussian component with the highest mean as the "good pronunciation" cluster
+Computed log-likelihoods of phoneme GOP scores under the good-pronunciation Gaussian
+Aggregated likelihoods to obtain word-level and sentence-level pronunciation representations
 
 These likelihood-based features provide a probabilistic measure of pronunciation quality beyond raw GOP scores.
 
