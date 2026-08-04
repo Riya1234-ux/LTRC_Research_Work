@@ -439,6 +439,89 @@ Measured:
 
 This analysis provides insight into whether pronunciation assessment behaves differently across major phonetic categories.
 
+**Hierarchical Pronunciation Feature Engineering**
+
+Developed a hierarchical feature extraction pipeline from the SpeechOcean762 dataset for pronunciation assessment.
+
+**Phoneme-level features**
+
+GOP (Goodness of Pronunciation) scores
+Phoneme-level statistical descriptors
+Gaussian Mixture Model (GMM)-based likelihoods
+Right-Gaussian (best pronunciation cluster) log-likelihoods
+
+**Word-level features** (derived from phoneme GOP scores)
+
+Mean, median, minimum, maximum GOP
+Standard deviation and variance
+GOP range
+Bottom-2 and Top-2 GOP averages
+Number and ratio of negative GOP scores
+Number of GOP scores below predefined thresholds
+Mean absolute deviation
+RMS GOP
+Interquartile range (IQR)
+Skewness and kurtosis
+Phoneme count
+
+**Sentence-level features** (derived from word-level features)
+
+Mean, median, minimum and maximum word scores
+Standard deviation and variance
+Range
+Bottom-3 and Top-3 word averages
+Total phoneme count
+Mean word length
+Negative word ratio
+IQR, skewness and kurtosis
+ **Correlation Analysis with Human Expert Scores**
+
+Performed large-scale statistical analysis to determine which automatically extracted pronunciation features best correlate with expert human annotations.
+
+Correlation analysis included:
+
+Pearson Correlation
+Spearman Rank Correlation
+
+**Evaluated correlations at multiple levels**:
+
+Phoneme level
+Word level
+Sentence level
+
+Machine-derived features were compared against expert pronunciation scores extracted from the SpeechOcean762 scores.json annotations.
+
+ **GOP-based Gaussian Mixture Modeling**
+
+Constructed pronunciation models directly from GOP distributions.
+
+**Pipeline**:
+
+# Collected GOP scores from all learner utterances
+# Grouped GOP values by phoneme across the entire corpus
+# Trained a 3-component Gaussian Mixture Model (GMM) for each phoneme
+# Identified the Gaussian component with the highest mean as the "good pronunciation" cluster
+# Computed log-likelihoods of phoneme GOP scores under the good-pronunciation Gaussian
+# Aggregated likelihoods to obtain word-level and sentence-level pronunciation representations
+
+These likelihood-based features provide a probabilistic measure of pronunciation quality beyond raw GOP scores.
+
+4. Hierarchical Regression Modeling
+
+Investigated hierarchical regression models for pronunciation score prediction.
+
+# Current framework:
+
+Phoneme GOP
+        ↓
+Statistical Feature Extraction
+        ↓
+Word-level Regression
+        ↓
+Sentence-level Regression
+
+The objective is to learn pronunciation scores that closely approximate expert human judgments while maintaining feature interpretability.
+
 ---
 
 # ✅ Current Status
