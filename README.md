@@ -439,7 +439,7 @@ Measured:
 
 This analysis provides insight into whether pronunciation assessment behaves differently across major phonetic categories.
 
-**Hierarchical Pronunciation Feature Engineering**
+## Hierarchical Pronunciation Feature Engineering
 
 Developed a hierarchical feature extraction pipeline from the SpeechOcean762 dataset for pronunciation assessment.
 
